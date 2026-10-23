@@ -10,33 +10,52 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as EntregaBasicoRouteImport } from './routes/entrega-basico'
+import { Route as EntregaPremiumRouteImport } from './routes/entrega-premium'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EntregaBasicoRoute = EntregaBasicoRouteImport.update({
+  id: '/entrega-basico',
+  path: '/entrega-basico',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EntregaPremiumRoute = EntregaPremiumRouteImport.update({
+  id: '/entrega-premium',
+  path: '/entrega-premium',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/entrega-basico': typeof EntregaBasicoRoute
+  '/entrega-premium': typeof EntregaPremiumRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/entrega-basico': typeof EntregaBasicoRoute
+  '/entrega-premium': typeof EntregaPremiumRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/entrega-basico': typeof EntregaBasicoRoute
+  '/entrega-premium': typeof EntregaPremiumRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/entrega-basico' | '/entrega-premium'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
-  fileRoutesById: FileRoutesById
+  to: '/' | '/entrega-basico' | '/entrega-premium'
+  id: '__root__' | '/' | '/entrega-basico' | '/entrega-premium'
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  EntregaBasicoRoute: typeof EntregaBasicoRoute
+  EntregaPremiumRoute: typeof EntregaPremiumRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +67,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/entrega-basico': {
+      id: '/entrega-basico'
+      path: '/entrega-basico'
+      fullPath: '/entrega-basico'
+      preLoaderRoute: typeof EntregaBasicoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/entrega-premium': {
+      id: '/entrega-premium'
+      path: '/entrega-premium'
+      fullPath: '/entrega-premium'
+      preLoaderRoute: typeof EntregaPremiumRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
+  IndexRoute,
+  EntregaBasicoRoute,
+  EntregaPremiumRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
