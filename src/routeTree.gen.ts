@@ -16,6 +16,7 @@ import { Route as Entrega30DicasRouteImport } from './routes/entrega-30-dicas'
 import { Route as EntregaChecklistEnemRouteImport } from './routes/entrega-checklist-enem'
 import { Route as EntregaConteudoCompletoEnemRouteImport } from './routes/entrega-conteudo-completo-enem'
 import { Route as UpsellFisicaEnemRouteImport } from './routes/upsell-fisica-enem'
+import { Route as ObrigadoEnemRouteImport } from './routes/obrigado-enem'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -52,6 +53,11 @@ const UpsellFisicaEnemRoute = UpsellFisicaEnemRouteImport.update({
   path: '/upsell-fisica-enem',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ObrigadoEnemRoute = ObrigadoEnemRouteImport.update({
+  id: '/obrigado-enem',
+  path: '/obrigado-enem',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -61,6 +67,7 @@ export interface FileRoutesByFullPath {
   '/entrega-checklist-enem': typeof EntregaChecklistEnemRoute
   '/entrega-conteudo-completo-enem': typeof EntregaConteudoCompletoEnemRoute
   '/upsell-fisica-enem': typeof UpsellFisicaEnemRoute
+  '/obrigado-enem': typeof ObrigadoEnemRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -83,10 +90,10 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/entrega-basico' | '/entrega-premium' | '/entrega-30-dicas' | '/entrega-checklist-enem' | '/entrega-conteudo-completo-enem' | '/upsell-fisica-enem'
+  fullPaths: '/' | '/entrega-basico' | '/entrega-premium' | '/entrega-30-dicas' | '/entrega-checklist-enem' | '/entrega-conteudo-completo-enem' | '/upsell-fisica-enem' | '/obrigado-enem'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/entrega-basico' | '/entrega-premium' | '/entrega-30-dicas' | '/entrega-checklist-enem' | '/entrega-conteudo-completo-enem' | '/upsell-fisica-enem'
-  id: '__root__' | '/' | '/entrega-basico' | '/entrega-premium' | '/entrega-30-dicas' | '/entrega-checklist-enem' | '/entrega-conteudo-completo-enem' | '/upsell-fisica-enem'
+  to: '/' | '/entrega-basico' | '/entrega-premium' | '/entrega-30-dicas' | '/entrega-checklist-enem' | '/entrega-conteudo-completo-enem' | '/upsell-fisica-enem' | '/obrigado-enem'
+  id: '__root__' | '/' | '/entrega-basico' | '/entrega-premium' | '/entrega-30-dicas' | '/entrega-checklist-enem' | '/entrega-conteudo-completo-enem' | '/upsell-fisica-enem' | '/obrigado-enem'
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
@@ -96,6 +103,7 @@ export interface RootRouteChildren {
   EntregaChecklistEnemRoute: typeof EntregaChecklistEnemRoute
   EntregaConteudoCompletoEnemRoute: typeof EntregaConteudoCompletoEnemRoute
   UpsellFisicaEnemRoute: typeof UpsellFisicaEnemRoute
+  ObrigadoEnemRoute: typeof ObrigadoEnemRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -149,6 +157,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UpsellFisicaEnemRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/obrigado-enem': {
+      id: '/obrigado-enem'
+      path: '/obrigado-enem'
+      fullPath: '/obrigado-enem'
+      preLoaderRoute: typeof ObrigadoEnemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -160,6 +175,7 @@ const rootRouteChildren: RootRouteChildren = {
   EntregaChecklistEnemRoute,
   EntregaConteudoCompletoEnemRoute,
   UpsellFisicaEnemRoute,
+  ObrigadoEnemRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
