@@ -137,7 +137,7 @@ function UpsellFisicaEnem() {
                     offer-id="3dqow8q"
                     app-base-url="https://app.cakto.com.br"
                     offer-type="upsell"
-                    upsell-reject-url="members_area"
+                    upsell-reject-url="https://professoramarciaenem.lovable.app/obrigado-enem"
                   >
                     Sim, quero adicionar o guia de Física
                   </cakto-upsell-accept>
