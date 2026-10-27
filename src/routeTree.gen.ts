@@ -15,6 +15,7 @@ import { Route as EntregaPremiumRouteImport } from './routes/entrega-premium'
 import { Route as Entrega30DicasRouteImport } from './routes/entrega-30-dicas'
 import { Route as EntregaChecklistEnemRouteImport } from './routes/entrega-checklist-enem'
 import { Route as EntregaConteudoCompletoEnemRouteImport } from './routes/entrega-conteudo-completo-enem'
+import { Route as UpsellFisicaEnemRouteImport } from './routes/upsell-fisica-enem'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -46,6 +47,11 @@ const EntregaConteudoCompletoEnemRoute = EntregaConteudoCompletoEnemRouteImport.
   path: '/entrega-conteudo-completo-enem',
   getParentRoute: () => rootRouteImport,
 } as any)
+const UpsellFisicaEnemRoute = UpsellFisicaEnemRouteImport.update({
+  id: '/upsell-fisica-enem',
+  path: '/upsell-fisica-enem',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +60,7 @@ export interface FileRoutesByFullPath {
   '/entrega-30-dicas': typeof Entrega30DicasRoute
   '/entrega-checklist-enem': typeof EntregaChecklistEnemRoute
   '/entrega-conteudo-completo-enem': typeof EntregaConteudoCompletoEnemRoute
+  '/upsell-fisica-enem': typeof UpsellFisicaEnemRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +69,7 @@ export interface FileRoutesByTo {
   '/entrega-30-dicas': typeof Entrega30DicasRoute
   '/entrega-checklist-enem': typeof EntregaChecklistEnemRoute
   '/entrega-conteudo-completo-enem': typeof EntregaConteudoCompletoEnemRoute
+  '/upsell-fisica-enem': typeof UpsellFisicaEnemRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,13 +79,14 @@ export interface FileRoutesById {
   '/entrega-30-dicas': typeof Entrega30DicasRoute
   '/entrega-checklist-enem': typeof EntregaChecklistEnemRoute
   '/entrega-conteudo-completo-enem': typeof EntregaConteudoCompletoEnemRoute
+  '/upsell-fisica-enem': typeof UpsellFisicaEnemRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/entrega-basico' | '/entrega-premium' | '/entrega-30-dicas' | '/entrega-checklist-enem' | '/entrega-conteudo-completo-enem'
+  fullPaths: '/' | '/entrega-basico' | '/entrega-premium' | '/entrega-30-dicas' | '/entrega-checklist-enem' | '/entrega-conteudo-completo-enem' | '/upsell-fisica-enem'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/entrega-basico' | '/entrega-premium' | '/entrega-30-dicas' | '/entrega-checklist-enem' | '/entrega-conteudo-completo-enem'
-  id: '__root__' | '/' | '/entrega-basico' | '/entrega-premium' | '/entrega-30-dicas' | '/entrega-checklist-enem' | '/entrega-conteudo-completo-enem'
+  to: '/' | '/entrega-basico' | '/entrega-premium' | '/entrega-30-dicas' | '/entrega-checklist-enem' | '/entrega-conteudo-completo-enem' | '/upsell-fisica-enem'
+  id: '__root__' | '/' | '/entrega-basico' | '/entrega-premium' | '/entrega-30-dicas' | '/entrega-checklist-enem' | '/entrega-conteudo-completo-enem' | '/upsell-fisica-enem'
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
@@ -86,6 +95,7 @@ export interface RootRouteChildren {
   Entrega30DicasRoute: typeof Entrega30DicasRoute
   EntregaChecklistEnemRoute: typeof EntregaChecklistEnemRoute
   EntregaConteudoCompletoEnemRoute: typeof EntregaConteudoCompletoEnemRoute
+  UpsellFisicaEnemRoute: typeof UpsellFisicaEnemRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -132,6 +142,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EntregaConteudoCompletoEnemRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/upsell-fisica-enem': {
+      id: '/upsell-fisica-enem'
+      path: '/upsell-fisica-enem'
+      fullPath: '/upsell-fisica-enem'
+      preLoaderRoute: typeof UpsellFisicaEnemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -142,6 +159,7 @@ const rootRouteChildren: RootRouteChildren = {
   Entrega30DicasRoute,
   EntregaChecklistEnemRoute,
   EntregaConteudoCompletoEnemRoute,
+  UpsellFisicaEnemRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
