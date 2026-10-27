@@ -6,8 +6,12 @@ const CAKTO_SCRIPT = "https://caktoscripts.nyc3.cdn.digitaloceanspaces.com/upsel
 export const Route = createFileRoute("/upsell-fisica-enem")({
   head: () => ({
     meta: [
-      { title: "Oferta especial: Física para o ENEM | Professora Márcia" },
-      { name: "description", content: "Complete sua preparação com o guia de conteúdos e fórmulas de Física para o ENEM." },
+      { title: "Antes de finalizar: complete sua revisão de Física | Professora Márcia" },
+      {
+        name: "description",
+        content:
+          "Conheça o guia de conteúdos e fórmulas de Física para complementar sua preparação para o ENEM.",
+      },
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),
@@ -25,78 +29,133 @@ function UpsellFisicaEnem() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#eef4fb] via-white to-[#f4f7fb] px-4 py-8 text-[#172337] sm:py-12">
+    <main className="min-h-screen bg-[#f3f6fb] px-3 py-4 text-[#172337] sm:px-5 sm:py-8">
       <div className="mx-auto max-w-3xl">
-        <header className="mb-8 text-center">
-          <div className="mx-auto mb-3 grid h-12 w-12 place-items-center rounded-2xl bg-[#173d68] text-xl font-extrabold text-white shadow-lg">M</div>
-          <p className="text-sm font-bold uppercase tracking-[.16em] text-[#24558a]">Professora Márcia • ENEM</p>
+        <header className="mb-4 flex items-center justify-center gap-3 py-2 sm:mb-6">
+          <div className="grid h-10 w-10 place-items-center rounded-xl bg-[#173d68] text-lg font-black text-white shadow-md">M</div>
+          <div>
+            <p className="text-sm font-extrabold tracking-tight text-[#173d68]">Professora Márcia</p>
+            <p className="text-xs font-medium text-slate-500">Materiais de apoio para o ENEM</p>
+          </div>
         </header>
 
-        <section className="overflow-hidden rounded-3xl border border-[#dce6f1] bg-white shadow-xl">
-          <div className="bg-[#173d68] px-6 py-8 text-center text-white sm:px-12 sm:py-10">
-            <p className="mb-3 inline-flex rounded-full bg-white/15 px-4 py-2 text-xs font-extrabold uppercase tracking-wider">Oferta especial para você</p>
-            <h1 className="text-3xl font-black leading-tight sm:text-5xl">Espere! Complete sua preparação para o ENEM</h1>
-            <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-blue-100 sm:text-lg">Adicione ao seu material um guia de Física com os principais conteúdos, fórmulas e explicações para revisar com mais segurança.</p>
+        <section className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_18px_55px_rgba(23,61,104,0.12)]">
+          <div className="relative overflow-hidden bg-[#102f54] px-5 py-8 text-center text-white sm:px-12 sm:py-11">
+            <div className="pointer-events-none absolute -right-12 -top-16 h-48 w-48 rounded-full bg-blue-400/15 blur-2xl" />
+            <div className="pointer-events-none absolute -bottom-20 -left-10 h-44 w-44 rounded-full bg-cyan-300/10 blur-2xl" />
+            <div className="relative">
+              <p className="mx-auto mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-[.14em] text-blue-100 sm:text-xs">
+                <span aria-hidden="true">✦</span> Uma oferta complementar à sua compra
+              </p>
+              <h1 className="mx-auto max-w-2xl text-3xl font-black leading-[1.08] tracking-tight sm:text-5xl">
+                Antes de continuar… deixe sua revisão de Física mais completa.
+              </h1>
+              <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-blue-100 sm:text-lg sm:leading-7">
+                As atividades ajudam você a praticar. Um guia de conteúdos e fórmulas pode ajudar a consultar a teoria enquanto estuda.
+              </p>
+            </div>
           </div>
 
-          <div className="px-6 py-8 sm:px-12 sm:py-10">
-            <div className="mx-auto mb-8 max-w-xl text-center">
-              <div className="mx-auto mb-4 grid h-16 w-16 place-items-center rounded-2xl bg-[#e5edf8] text-3xl">📘</div>
-              <h2 className="text-2xl font-extrabold leading-tight text-[#173d68] sm:text-3xl">Física para o ENEM: guia completo de conteúdos e fórmulas</h2>
-              <p className="mt-3 leading-7 text-[#617087]">Tenha um material de consulta para organizar a revisão e relembrar os conceitos essenciais antes da prova.</p>
+          <div className="px-5 py-6 sm:px-10 sm:py-9">
+            <div className="mx-auto mb-7 max-w-2xl text-center">
+              <div className="mx-auto mb-4 grid h-16 w-16 place-items-center rounded-2xl bg-gradient-to-br from-blue-50 to-sky-100 text-3xl shadow-inner">
+                📘
+              </div>
+              <p className="mb-2 text-xs font-black uppercase tracking-[.16em] text-[#2870a8]">
+                Material digital de apoio
+              </p>
+              <h2 className="text-2xl font-black leading-tight text-[#173d68] sm:text-4xl">
+                Física para o ENEM
+                <span className="mt-1 block text-lg font-bold text-slate-600 sm:text-2xl">
+                  Guia completo de conteúdos e fórmulas
+                </span>
+              </h2>
+              <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
+                Chega de ficar procurando cada fórmula em um lugar diferente. Tenha um material de consulta para acompanhar sua revisão e retomar os conceitos quando precisar.
+              </p>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl border border-[#e2e8f0] bg-[#f8faff] p-5">
-                <div className="mb-2 text-2xl">🧠</div>
-                <h3 className="font-extrabold text-[#173d68]">Conteúdos organizados</h3>
-                <p className="mt-2 text-sm leading-6 text-[#617087]">Revise os principais temas de Física cobrados no ENEM com uma estrutura fácil de consultar.</p>
-              </div>
-              <div className="rounded-2xl border border-[#e2e8f0] bg-[#f8faff] p-5">
-                <div className="mb-2 text-2xl">📐</div>
-                <h3 className="font-extrabold text-[#173d68]">Fórmulas explicadas</h3>
-                <p className="mt-2 text-sm leading-6 text-[#617087]">Consulte fórmulas, entenda o significado das variáveis e confira as unidades utilizadas.</p>
-              </div>
-              <div className="rounded-2xl border border-[#e2e8f0] bg-[#f8faff] p-5">
-                <div className="mb-2 text-2xl">✍️</div>
-                <h3 className="font-extrabold text-[#173d68]">Exemplos resolvidos</h3>
-                <p className="mt-2 text-sm leading-6 text-[#617087]">Use exemplos como referência para compreender a aplicação dos conceitos e das fórmulas.</p>
-              </div>
-              <div className="rounded-2xl border border-[#e2e8f0] bg-[#f8faff] p-5">
-                <div className="mb-2 text-2xl">🎯</div>
-                <h3 className="font-extrabold text-[#173d68]">Revisão mais prática</h3>
-                <p className="mt-2 text-sm leading-6 text-[#617087]">Reúna os pontos importantes em um material de apoio para acompanhar seus estudos.</p>
+            <div className="mb-7 rounded-2xl border border-blue-100 bg-[#f5f9ff] p-4 sm:p-6">
+              <p className="mb-4 text-center text-sm font-extrabold text-[#173d68] sm:text-base">
+                O que esse guia acrescenta aos seus estudos:
+              </p>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <div className="flex gap-3 rounded-xl bg-white p-3.5 shadow-sm">
+                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-blue-50 text-lg">🧭</span>
+                  <div>
+                    <h3 className="text-sm font-extrabold text-[#173d68]">Conteúdos organizados</h3>
+                    <p className="mt-1 text-xs leading-5 text-slate-600">Encontre os temas com mais facilidade durante a revisão.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3 rounded-xl bg-white p-3.5 shadow-sm">
+                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-blue-50 text-lg">📐</span>
+                  <div>
+                    <h3 className="text-sm font-extrabold text-[#173d68]">Fórmulas para consultar</h3>
+                    <p className="mt-1 text-xs leading-5 text-slate-600">Relembre relações, variáveis e unidades na hora de estudar.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3 rounded-xl bg-white p-3.5 shadow-sm">
+                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-blue-50 text-lg">✍️</span>
+                  <div>
+                    <h3 className="text-sm font-extrabold text-[#173d68]">Apoio para praticar</h3>
+                    <p className="mt-1 text-xs leading-5 text-slate-600">Use o guia junto às atividades para conectar teoria e exercício.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3 rounded-xl bg-white p-3.5 shadow-sm">
+                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-blue-50 text-lg">🎯</span>
+                  <div>
+                    <h3 className="text-sm font-extrabold text-[#173d68]">Revisão mais prática</h3>
+                    <p className="mt-1 text-xs leading-5 text-slate-600">Volte aos pontos importantes sem recomeçar sua pesquisa do zero.</p>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div className="my-8 rounded-2xl border border-[#dce6f1] bg-[#f4f8fd] p-5 text-center">
-              <p className="font-extrabold text-[#173d68]">Quer incluir esse guia na sua preparação?</p>
-              <p className="mt-2 text-sm leading-6 text-[#617087]">Escolha abaixo se deseja aproveitar esta oferta. A confirmação é feita com segurança pela Cakto.</p>
+            <div className="mb-7 rounded-2xl bg-amber-50 px-4 py-4 text-center ring-1 ring-amber-200 sm:px-6">
+              <p className="text-sm font-black text-amber-950 sm:text-base">
+                A ideia não é estudar mais horas. É aproveitar melhor o estudo que você já faz.
+              </p>
+              <p className="mx-auto mt-2 max-w-xl text-xs leading-5 text-amber-900 sm:text-sm">
+                Use as atividades para treinar e o guia como apoio para consultar conteúdos e fórmulas ao longo da preparação.
+              </p>
             </div>
 
             <div className="mx-auto max-w-xl text-center">
-              <cakto-upsell-buttons>
-                <cakto-upsell-accept
-                  bg-color="#140035ff"
-                  text-color="#ffffff"
-                  upsell-accept-url="members_area"
-                  offer-id="3dqow8q"
-                  app-base-url="https://app.cakto.com.br"
-                  offer-type="upsell"
-                  upsell-reject-url="members_area"
-                >
-                  Sim, quero aproveitar a oferta
-                </cakto-upsell-accept>
-                <cakto-upsell-reject upsell-reject-url="members_area">
-                  Não, eu não quero aproveitar esta oferta
-                </cakto-upsell-reject>
-              </cakto-upsell-buttons>
-            </div>
+              <p className="mb-2 text-lg font-black text-[#173d68] sm:text-xl">
+                Quer adicionar esse material à sua preparação?
+              </p>
+              <p className="mb-5 text-sm leading-6 text-slate-600">
+                Se fizer sentido para você, aproveite agora esta oferta complementar antes de seguir para a próxima etapa.
+              </p>
 
-            <p className="mt-6 text-center text-xs leading-5 text-[#7b8798]">Oferta complementar. Ao escolher uma opção, você seguirá o fluxo configurado na Cakto.</p>
+              <div className="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm sm:p-5">
+                <cakto-upsell-buttons>
+                  <cakto-upsell-accept
+                    bg-color="#16a34a"
+                    text-color="#ffffff"
+                    upsell-accept-url="members_area"
+                    offer-id="3dqow8q"
+                    app-base-url="https://app.cakto.com.br"
+                    offer-type="upsell"
+                    upsell-reject-url="members_area"
+                  >
+                    Sim, quero adicionar o guia de Física
+                  </cakto-upsell-accept>
+                  <cakto-upsell-reject upsell-reject-url="members_area">
+                    Não, vou continuar sem o guia
+                  </cakto-upsell-reject>
+                </cakto-upsell-buttons>
+              </div>
+              <p className="mt-4 text-xs leading-5 text-slate-500">
+                A decisão é sua. Ao escolher uma opção, você seguirá o fluxo configurado pela Cakto.
+              </p>
+            </div>
           </div>
         </section>
-        <footer className="mt-6 text-center text-xs text-[#7b8798]">Professora Márcia • Bons estudos e sucesso no ENEM!</footer>
+
+        <footer className="px-3 py-5 text-center text-xs leading-5 text-slate-500">
+          Professora Márcia • Continue no seu ritmo. Cada etapa de estudo conta.
+        </footer>
       </div>
     </main>
   );
