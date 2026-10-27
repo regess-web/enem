@@ -14,6 +14,7 @@ import { Route as EntregaBasicoRouteImport } from './routes/entrega-basico'
 import { Route as EntregaPremiumRouteImport } from './routes/entrega-premium'
 import { Route as Entrega30DicasRouteImport } from './routes/entrega-30-dicas'
 import { Route as EntregaChecklistEnemRouteImport } from './routes/entrega-checklist-enem'
+import { Route as EntregaConteudoCompletoEnemRouteImport } from './routes/entrega-conteudo-completo-enem'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -40,6 +41,11 @@ const EntregaChecklistEnemRoute = EntregaChecklistEnemRouteImport.update({
   path: '/entrega-checklist-enem',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EntregaConteudoCompletoEnemRoute = EntregaConteudoCompletoEnemRouteImport.update({
+  id: '/entrega-conteudo-completo-enem',
+  path: '/entrega-conteudo-completo-enem',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -47,6 +53,7 @@ export interface FileRoutesByFullPath {
   '/entrega-premium': typeof EntregaPremiumRoute
   '/entrega-30-dicas': typeof Entrega30DicasRoute
   '/entrega-checklist-enem': typeof EntregaChecklistEnemRoute
+  '/entrega-conteudo-completo-enem': typeof EntregaConteudoCompletoEnemRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +61,7 @@ export interface FileRoutesByTo {
   '/entrega-premium': typeof EntregaPremiumRoute
   '/entrega-30-dicas': typeof Entrega30DicasRoute
   '/entrega-checklist-enem': typeof EntregaChecklistEnemRoute
+  '/entrega-conteudo-completo-enem': typeof EntregaConteudoCompletoEnemRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -62,13 +70,14 @@ export interface FileRoutesById {
   '/entrega-premium': typeof EntregaPremiumRoute
   '/entrega-30-dicas': typeof Entrega30DicasRoute
   '/entrega-checklist-enem': typeof EntregaChecklistEnemRoute
+  '/entrega-conteudo-completo-enem': typeof EntregaConteudoCompletoEnemRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/entrega-basico' | '/entrega-premium' | '/entrega-30-dicas' | '/entrega-checklist-enem'
+  fullPaths: '/' | '/entrega-basico' | '/entrega-premium' | '/entrega-30-dicas' | '/entrega-checklist-enem' | '/entrega-conteudo-completo-enem'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/entrega-basico' | '/entrega-premium' | '/entrega-30-dicas' | '/entrega-checklist-enem'
-  id: '__root__' | '/' | '/entrega-basico' | '/entrega-premium' | '/entrega-30-dicas' | '/entrega-checklist-enem'
+  to: '/' | '/entrega-basico' | '/entrega-premium' | '/entrega-30-dicas' | '/entrega-checklist-enem' | '/entrega-conteudo-completo-enem'
+  id: '__root__' | '/' | '/entrega-basico' | '/entrega-premium' | '/entrega-30-dicas' | '/entrega-checklist-enem' | '/entrega-conteudo-completo-enem'
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
@@ -76,6 +85,7 @@ export interface RootRouteChildren {
   EntregaPremiumRoute: typeof EntregaPremiumRoute
   Entrega30DicasRoute: typeof Entrega30DicasRoute
   EntregaChecklistEnemRoute: typeof EntregaChecklistEnemRoute
+  EntregaConteudoCompletoEnemRoute: typeof EntregaConteudoCompletoEnemRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -115,6 +125,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EntregaChecklistEnemRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/entrega-conteudo-completo-enem': {
+      id: '/entrega-conteudo-completo-enem'
+      path: '/entrega-conteudo-completo-enem'
+      fullPath: '/entrega-conteudo-completo-enem'
+      preLoaderRoute: typeof EntregaConteudoCompletoEnemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -124,6 +141,7 @@ const rootRouteChildren: RootRouteChildren = {
   EntregaPremiumRoute,
   Entrega30DicasRoute,
   EntregaChecklistEnemRoute,
+  EntregaConteudoCompletoEnemRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
