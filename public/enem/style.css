@@ -231,3 +231,14 @@ body {
   /* Mantém o carrossel de materiais em movimento para que continue visível. */
   .carousel-track { animation: carousel-scroll 50s linear infinite !important; }
 }
+
+/* Garante que o texto do botão do Kit Básico fique visível. */
+.pricing-card:not(.featured) > a.cta-btn-secondary {
+  color: #1d4ed8 !important;
+  -webkit-text-fill-color: #1d4ed8 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  font-size: 1rem !important;
+  font-weight: 800 !important;
+}
+.pricing-card:not(.featured) > a.cta-btn-secondary::before { pointer-events: none; }
