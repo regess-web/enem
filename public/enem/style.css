@@ -242,3 +242,44 @@ body {
   font-weight: 800 !important;
 }
 .pricing-card:not(.featured) > a.cta-btn-secondary::before { pointer-events: none; }
+
+/* Hierarquia clara dos planos: destacar o valor adicional real do Premium. */
+.plan-position {
+  color: #64748b;
+  font-size: .84rem;
+  margin: -8px 0 16px;
+}
+.pricing-card.featured .premium-value-line {
+  display: inline-block;
+  margin: 0 auto 14px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: #dbeafe;
+  color: #1e40af;
+  font-size: .9rem;
+  line-height: 1.35;
+}
+.pricing-card.featured .premium-value-line strong {
+  font-weight: 900;
+}
+.pricing-card.featured .pricing-badge {
+  letter-spacing: .2px;
+}
+.pricing-card.featured > .cta-btn {
+  font-weight: 900;
+  min-height: 58px;
+  background: linear-gradient(115deg, #1d4ed8 0%, #2563eb 55%, #0891b2 100%);
+  box-shadow: 0 10px 28px rgba(37,99,235,.34);
+}
+.pricing-card:not(.featured) > a.cta-btn-secondary {
+  color: #1d4ed8 !important;
+  -webkit-text-fill-color: #1d4ed8 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  font-size: .94rem !important;
+  font-weight: 700 !important;
+}
+@media (max-width: 600px) {
+  .pricing-card.featured .premium-value-line { font-size: .86rem; }
+  .pricing-card.featured .pricing-badge { font-size: .68rem; padding-inline: 14px; }
+}
