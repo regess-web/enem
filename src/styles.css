@@ -142,3 +142,12 @@
     color: var(--color-foreground);
   }
 }
+
+
+/* Alinha os textos ao centro somente em telas de celular. O desktop permanece inalterado. */
+@media screen and (max-width: 767px) {
+  body,
+  body * {
+    text-align: center !important;
+  }
+}
