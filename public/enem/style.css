@@ -83,32 +83,41 @@ body {
 }
 
 .comment {
-  text-align: center;
+  text-align: left;
 }
 
-.comment-header,
-.comment-actions {
-  justify-content: center;
+.comment-header {
+  justify-content: flex-start;
   margin-left: 0;
+}
+
+.comment-actions {
+  justify-content: flex-start;
+  margin-left: 48px;
 }
 
 .comment-text {
-  margin-left: 0;
-  text-align: center;
+  margin-left: 48px;
+  text-align: left;
 }
 
 .comment-actions .likes {
-  margin-left: 0;
+  margin-left: auto;
 }
 
 .faq-question {
-  justify-content: center;
+  justify-content: space-between;
   gap: 14px;
-  text-align: center;
+  text-align: left;
 }
 
 .faq-toggle {
-  margin-left: 0;
+  margin-left: 16px;
+}
+
+.faq-answer,
+.faq-answer p {
+  text-align: left;
 }
 
 @media (max-width: 600px) {
