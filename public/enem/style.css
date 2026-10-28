@@ -283,3 +283,10 @@ body {
   .pricing-card.featured .premium-value-line { font-size: .86rem; }
   .pricing-card.featured .pricing-badge { font-size: .68rem; padding-inline: 14px; }
 }
+
+
+/* Destaca em vermelho os preços originais riscados, como De R$ 97,00. */
+.pricing-original {
+  color: #dc2626 !important;
+  -webkit-text-fill-color: #dc2626 !important;
+}
